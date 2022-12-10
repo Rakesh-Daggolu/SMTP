@@ -1,0 +1,22 @@
+{%extends 'blogApp/base.html'%}
+{%block title_block%}
+{{post.title|title}}
+{%endblock%}
+{%block content_block%}
+<h2>{{post.title|title}}</h2>
+<p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+{{post.body|linebreaks}}
+<a href="/sharemail/{{post.id}}/" target="_blank"><button type="button" class="btn btn-primay btn-lg" style="background:blue;color:white">Share Post by mail</button></a>
+{%for comment in comment_list%}
+<h2 style="color:red">{{comment.name}}</h2>
+<h3>{{comment.mail}}</h3>
+<p>{{comment.created_at}}</p>
+<p style="border-bottom:4px solid black">{{comment.body}}</p>
+{%endfor%}
+<br><br>
+<form method="post" style="color:black">
+  {{form.as_p}}
+  {%csrf_token%}
+  <input type="submit" class="btn btn-primay btn-lg" style="background:blue" value="Submit">
+</form>
+{%endblock%}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" style="margin:100px ; text-align:center">
+       <div class="jumbotron" style="background:yellow">
+    <form method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="btn btn-primay btn-lg" style="margin-right:20px" value="Login">
+    <button type="button" name="btn btn-primary btn-lg" ><a href="/signup/">Sign in</a></button>
+    </form>
+    <br>
+   </div>
+   </div>
+  </body>
+</html>

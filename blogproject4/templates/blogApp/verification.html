@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+      <title>SignUp Form</title>
+  </head>
+  <body>
+     <form method="POST">
+      {%if flag %}
+       <h1 style="color:red"> {{msg}}</h1>
+      {%endif%}
+      {{form.as_p}}
+      {%csrf_token%}
+      <input type="submit" value="Verify">
+     </form>
+  </body>
+</html>
